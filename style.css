@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: seagreen;
+}
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.logo_area h1 {
+  color: rgb(194, 194, 194);
+}
+
+#menu_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+}
+nav ul li {
+  list-style: none;
+  position: relative;
+  padding: 20px;
+  border-bottom: 1px solid gray;
+}
+nav ul li:last-child {
+  border-bottom: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 17px;
+  font-weight: 300;
+  text-transform: capitalize;
+  transition: 0.1s;
+}
+nav ul li:hover a {
+  color: rgb(238, 189, 97);
+}
+nav ul li:hover ul a {
+  color: rgb(255, 255, 255);
+}
+
+/*============
+ dropdown 
+ ============*/
+
+nav ul ul {
+  flex-direction: column;
+  position: absolute;
+  background-color: rgb(59, 54, 65);
+  border-radius: 0 40px 0px 40px;
+  left: -9999999px;
+  width: 180px;
+  top: 56px;
+}
+nav ul li:hover ul {
+  left: 0px;
+}
+nav ul ul li {
+  padding: 8px 15px;
+}
+nav ul ul li:hover {
+  background-color: rgb(17, 128, 72);
+}
+nav ul ul li:first-child:hover {
+  border-radius: 0 50px 0px 0px;
+}
+nav ul ul li:last-child:hover {
+  border-radius: 0 0px 0px 50px;
+}
+
+/* dropdown step 2 */
+nav ul li:hover ul ul {
+  left: -99999999px;
+}
+
+nav ul ul li:hover ul {
+  left: 180px;
+  top: 0px;
+  background-color: rgb(122, 50, 84);
+  border-radius: 0 40px 0px 40px;
+}
+
+/* dropdown step 3 */
+nav ul ul li:hover ul ul {
+  /* left: -999999px; */
+  display: none;
+}
+
+nav ul ul ul li:hover ul {
+  display: block;
+  left: -180px;
+  /* top: -10px; */
+  z-index: 1;
+  background-color: rgb(52, 77, 124);
+  border-radius: 0 40px 0px 40px;
+}
+.mini_menu {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .menu_area {
+    display: none;
+  }
+  .mini_menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu_area {
+    display: none;
+  }
+  .mini_menu {
+    display: block;
+    color: wheat;
+  }
+}
